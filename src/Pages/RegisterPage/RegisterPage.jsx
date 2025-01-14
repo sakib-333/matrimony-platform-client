@@ -40,7 +40,7 @@ const RegisterPage = () => {
   return (
     <div>
       <PageTitle title={"Register"} />
-      <form className="my-4 max-w-md mx-auto" onSubmit={handleSubmit(onSubmit)}>
+      {/* <form className="my-4 max-w-md mx-auto" onSubmit={handleSubmit(onSubmit)}>
         <h1 className="heading">Registeration</h1>
         <fieldset className="w-full space-y-1 dark:text-gray-800">
           <label htmlFor="price" className="block text-sm font-medium">
@@ -99,7 +99,66 @@ const RegisterPage = () => {
           </Link>
           here.
         </p>
-      </form>
+      </form> */}
+      <div className="w-full mx-auto my-4 max-w-md p-8 space-y-3 rounded-xl bg-gray-800">
+        <h1 className="text-2xl font-bold text-center">Register</h1>
+        <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+          <div className="space-y-1 text-sm">
+            <label htmlFor="username" className="block">
+              Your Name
+            </label>
+            <input
+              type="text"
+              {...register("displayName", { required: true })}
+              placeholder="Your Name"
+              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+            />
+          </div>
+          <div className="space-y-1 text-sm">
+            <label htmlFor="username" className="block">
+              Your Email
+            </label>
+            <input
+              type="email"
+              {...register("email", { required: true })}
+              placeholder="Your Email"
+              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+            />
+          </div>
+          <PasswordField register={register} errors={errors} />
+          <div className="space-y-1 text-sm">
+            <label htmlFor="username" className="block">
+              Your photo URL
+            </label>
+            <input
+              type="text"
+              {...register("photoURL", { required: true })}
+              placeholder="Your photo URL"
+              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+            />
+          </div>
+          <button
+            type="submit"
+            className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600"
+          >
+            Register
+          </button>
+        </form>
+        <div className="flex items-center pt-4 space-x-1">
+          <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
+          <p className="px-3 text-sm">Login with social accounts</p>
+          <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
+        </div>
+        <div className="flex justify-center space-x-4">
+          <SigninWithGoogle />
+        </div>
+        <p className="text-xs text-center sm:px-6">
+          Already have an account{" "}
+          <Link to={"/login"} rel="noopener noreferrer" className="underline">
+            Log in
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };
