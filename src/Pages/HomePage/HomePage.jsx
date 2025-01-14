@@ -3,6 +3,7 @@ import PageTitle from "../../Components/PageTitle/PageTitle";
 import PremiumMembers from "./PremiumMembers/PremiumMembers";
 import HowItWorks from "./HowItWorks/HowItWorks";
 import Banner from "./Banner/Banner";
+import SuccessCounter from "./SuccessCounter/SuccessCounter";
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <Banner />
       <PremiumMembers />
       <HowItWorks />
+      <SuccessCounter />
     </div>
   );
 };
