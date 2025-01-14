@@ -4,6 +4,7 @@ import PremiumMembers from "./PremiumMembers/PremiumMembers";
 import HowItWorks from "./HowItWorks/HowItWorks";
 import Banner from "./Banner/Banner";
 import SuccessCounter from "./SuccessCounter/SuccessCounter";
+import SuccessStory from "./SuccessStory/SuccessStory";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
       <PremiumMembers />
       <HowItWorks />
       <SuccessCounter />
+      <SuccessStory />
     </div>
   );
 };
