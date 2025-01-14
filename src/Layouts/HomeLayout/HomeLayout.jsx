@@ -8,7 +8,7 @@ import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 const HomeLayout = () => {
   const { loading } = useContext(AuthContext);
   return (
-    <div className="max-w-screen-2xl mx-auto">
+    <div className="max-w-screen-2xl mx-auto bg-black text-white">
       <Navbar />
       <div className="min-h-screen px-2">
         {loading ? <LoadingSpinner /> : <Outlet />}

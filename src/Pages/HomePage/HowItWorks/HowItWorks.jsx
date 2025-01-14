@@ -3,7 +3,7 @@ import { howItWorks } from "../Assets/howItWorks";
 
 const HowItWorks = () => {
   return (
-    <div className="bg-gray-100 py-8">
+    <div className="text-white py-8">
       <h1 className="heading">How matrimony works</h1>
       <p className="text-center text-sm">
         Get started in bdmarriage.com in 3 easy steps

@@ -7,8 +7,8 @@ const PremiumMembers = () => {
   const [sortType, setSortType] = useState("ascending");
 
   return (
-    <div>
-      <h1 className="heading mb-4">Premium Members</h1>
+    <div className="bg-gray-800 text-white py-8">
+      <h1 className="heading">Premium Members</h1>
       <select
         onChange={(e) => setSortType(e.target.value)}
         defaultValue={""}
