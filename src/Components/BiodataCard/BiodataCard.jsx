@@ -1,6 +1,7 @@
 import React from "react";
 import profile from "../../Assets/sakib.jpg";
 import { MdWorkspacePremium } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const BiodataCard = ({ premium = false }) => {
   return (
@@ -11,12 +12,12 @@ const BiodataCard = ({ premium = false }) => {
       <p className="text-sm">
         {"22 yrs"}, {"Male"}, {"Student"}, {"Gopalganj"}
       </p>
-      <button
-        type="button"
+      <Link
+        to={"#"}
         className="px-4 py-1 text-sm font-semibold rounded-full dark:bg-gray-800 dark:text-gray-100"
       >
         View Profile
-      </button>
+      </Link>
     </div>
   );
 };

@@ -1,7 +1,8 @@
 import React from "react";
 import PageTitle from "../../Components/PageTitle/PageTitle";
-import Banner from "../../Components/Banner/Banner";
-import PremiumMembers from "../../Components/PremiumMembers/PremiumMembers";
+import PremiumMembers from "./PremiumMembers/PremiumMembers";
+import HowItWorks from "./HowItWorks/HowItWorks";
+import Banner from "./Banner/Banner";
 
 const HomePage = () => {
   return (
@@ -9,6 +10,7 @@ const HomePage = () => {
       <PageTitle title={"Home"} />
       <Banner />
       <PremiumMembers />
+      <HowItWorks />
     </div>
   );
 };

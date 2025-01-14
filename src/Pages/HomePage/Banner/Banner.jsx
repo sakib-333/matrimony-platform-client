@@ -1,6 +1,6 @@
 import React from "react";
-import bannerImage from "../../Assets/bannerPhoto.png";
-import { sliderContent } from "../../Assets/sliderContent";
+import bannerImage from "../../../Assets/bannerPhoto.png";
+import { sliderContent } from "../../../Assets/sliderContent";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
