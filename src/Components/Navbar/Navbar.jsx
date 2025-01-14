@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthContext";
 import { toast } from "react-toastify";
-import logo from "../../Assets/logo.jpeg";
+import logo from "../../Assets/logo.svg";
 
 const activeStyle = {
   textDecoration: "underline",
