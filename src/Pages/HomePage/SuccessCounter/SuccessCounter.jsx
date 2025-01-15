@@ -5,8 +5,8 @@ import { useQuery } from "@tanstack/react-query";
 
 const SuccessCounter = () => {
   const axiosInstance = useAxios();
-  const { data = {}, isLoading } = useQuery({
-    queryKey: ["premiumUsers"],
+  const { data = {} } = useQuery({
+    queryKey: ["successCounter"],
     queryFn: async () => {
       const result = await axiosInstance.get(`/totalBiodatas`);
       return result.data;

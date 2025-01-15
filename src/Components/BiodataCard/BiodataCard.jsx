@@ -1,5 +1,4 @@
 import React from "react";
-import profile from "../../Assets/sakib.jpg";
 import { MdWorkspacePremium } from "react-icons/md";
 import { Link } from "react-router-dom";
 
@@ -34,7 +33,7 @@ const BiodataCard = ({ user }) => {
           <li>
             <Link
               to={`/biodata/${_id}`}
-              className=" text-sm font-semibold text-purple-500"
+              className=" text-sm font-semibold text-violet-500"
             >
               View Profile
             </Link>
