@@ -54,9 +54,14 @@ const AuthProvider = ({ children }) => {
           setLoading(false);
         });
       } else {
-        axiosInstance.post("/logout", {}).then((res) => {
-          setLoading(false);
-        });
+        axiosInstance
+          .post("/logout", {})
+          .then((res) => {
+            setLoading(false);
+          })
+          .finally(() => {
+            setLoading(false);
+          });
       }
     });
     return () => unsubscribe();

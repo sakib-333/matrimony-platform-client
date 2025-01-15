@@ -3,21 +3,52 @@ import profile from "../../Assets/sakib.jpg";
 import { MdWorkspacePremium } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const BiodataCard = ({ premium = false }) => {
+const BiodataCard = ({ user }) => {
+  const {
+    _id,
+    userType,
+    profileImg,
+    age,
+    bioType,
+    permanentDivision,
+    occupation,
+  } = user;
   return (
-    <div className="bg-gray-200 relative p-4 w-full mx-auto max-w-[300px] flex flex-col items-center gap-2">
-      {premium && <MdWorkspacePremium className="absolute left-4 text-2xl" />}
-      <img className="w-[100px] h-[100px] rounded-full" src={profile} />
-      <p className="text-xs font-bold">ID: {"ABC999"}</p>
-      <p className="text-sm">
-        {"22 yrs"}, {"Male"}, {"Student"}, {"Gopalganj"}
-      </p>
-      <Link
-        to={"#"}
-        className="px-4 py-1 text-sm font-semibold rounded-full dark:bg-gray-800 dark:text-gray-100"
-      >
-        View Profile
-      </Link>
+    <div className="border relative p-4 w-full ">
+      {userType == "premium" && (
+        <MdWorkspacePremium className="absolute left-0 top-0 text-2xl" />
+      )}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 justify-items-center items-center">
+        <div className="text-center">
+          <img
+            className="max-w-[150px] aspect-square rounded-full"
+            src={profileImg}
+          />
+          <p className="text-xs mt-2 font-bold max-w-[150px] ">{"ABC999"}</p>
+        </div>
+        <ul className="space-y-1">
+          <li>Age: {age}</li>
+          <li>Type: {bioType}</li>
+          <li>Division: {permanentDivision}</li>
+          <li>Occupation: {occupation}</li>
+          <li>
+            <Link
+              to={`/biodata/${_id}`}
+              className=" text-sm font-semibold text-purple-500"
+            >
+              View Profile
+            </Link>
+          </li>
+        </ul>
+      </div>
+      {/* <div className="flex justify-center md:justify-end">
+        <Link
+          to={"#"}
+          className="px-4 py-1 text-sm font-semibold rounded-full  border"
+        >
+          View Profile
+        </Link>
+      </div> */}
     </div>
   );
 };
