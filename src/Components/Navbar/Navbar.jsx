@@ -109,18 +109,12 @@ const Navbar = () => {
                   className="w-12 h-12 mr-2 border rounded-full dark:bg-gray-500 dark:border-gray-300"
                   src={user?.photoURL}
                 />
-                <button
-                  onClick={handleLogout}
-                  className="self-center border hidden md:block px-8 py-3 rounded"
-                >
+                <button onClick={handleLogout} className="btn-primary">
                   Log out
                 </button>
               </>
             ) : (
-              <Link
-                to={"/login"}
-                className="px-8 py-3 font-semibold border rounded hidden md:block"
-              >
+              <Link to={"/login"} className="btn-primary">
                 Log in
               </Link>
             )}
@@ -152,13 +146,13 @@ const Navbar = () => {
             {navItems}
             {user ? (
               <li className="pl-4">
-                <button className="text-violet-600" onClick={handleLogout}>
+                <button className="text-violet-500" onClick={handleLogout}>
                   Log out
                 </button>
               </li>
             ) : (
               <li className="pl-4">
-                <Link to={"/login"} className="text-violet-600">
+                <Link to={"/login"} className="text-violet-500">
                   Log in
                 </Link>
               </li>

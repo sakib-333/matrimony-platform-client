@@ -30,40 +30,6 @@ const LoginPage = () => {
   return (
     <div>
       <PageTitle title={"Login"} />
-
-      {/* <form className="my-4 max-w-md mx-auto" onSubmit={handleSubmit(onSubmit)}>
-        <h1 className="heading">Login</h1>
-        <fieldset className="w-full space-y-1 dark:text-gray-800">
-          <label htmlFor="price" className="block text-sm font-medium">
-            Email
-          </label>
-          <div className="flex">
-            <input
-              type="text"
-              placeholder="Email"
-              {...register("email", { required: true })}
-              className="flex flex-1 py-2 px-4 border sm:text-sm focus:ring-inset dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600"
-            />
-          </div>
-        </fieldset>
-        <PasswordField register={register} errors={errors} />
-        <button
-          type="submit"
-          className="px-8 py-3 mt-4 w-full font-semibold rounded dark:bg-gray-800 dark:text-gray-100"
-        >
-          Login
-        </button>
-        <div className="my-4">
-          <SigninWithGoogle />
-        </div>
-        <p className="mt-4">
-          Don't have an account?{" "}
-          <Link className="text-[#00f]" to={"/register"}>
-            Register{" "}
-          </Link>
-          here.
-        </p>
-      </form> */}
       <div className="w-full mx-auto my-4 max-w-md p-8 space-y-3 rounded-xl bg-gray-800">
         <h1 className="text-2xl font-bold text-center">Login</h1>
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
@@ -79,10 +45,7 @@ const LoginPage = () => {
             />
           </div>
           <PasswordField register={register} errors={errors} />
-          <button
-            type="submit"
-            className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600"
-          >
+          <button type="submit" className="btn-primary py-3 rounded-md">
             Sign in
           </button>
         </form>

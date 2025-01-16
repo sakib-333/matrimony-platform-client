@@ -9,4 +9,7 @@
   .paragraph {
     @apply mx-auto text-center text-gray-400;
   }
+  .btn-primary {
+    @apply w-full px-4 py-2 font-semibold rounded-sm bg-violet-600 hover:bg-violet-700 text-gray-50;
+  }
 }

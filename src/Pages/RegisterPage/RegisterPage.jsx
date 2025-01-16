@@ -40,66 +40,6 @@ const RegisterPage = () => {
   return (
     <div>
       <PageTitle title={"Register"} />
-      {/* <form className="my-4 max-w-md mx-auto" onSubmit={handleSubmit(onSubmit)}>
-        <h1 className="heading">Registeration</h1>
-        <fieldset className="w-full space-y-1 dark:text-gray-800">
-          <label htmlFor="price" className="block text-sm font-medium">
-            Your Name
-          </label>
-          <div className="flex">
-            <input
-              type="text"
-              placeholder="Your Name"
-              {...register("displayName", { required: true })}
-              className="flex flex-1 py-2 px-4 border sm:text-sm focus:ring-inset dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600"
-            />
-          </div>
-        </fieldset>
-        <fieldset className="w-full space-y-1 dark:text-gray-800">
-          <label htmlFor="price" className="block text-sm font-medium">
-            Your Email
-          </label>
-          <div className="flex">
-            <input
-              type="email"
-              placeholder="Your Email"
-              {...register("email", { required: true })}
-              className="flex flex-1 py-2 px-4 border sm:text-sm focus:ring-inset dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600"
-            />
-          </div>
-        </fieldset>
-        <PasswordField register={register} errors={errors} />
-        <fieldset className="w-full space-y-1 dark:text-gray-800">
-          <label htmlFor="price" className="block text-sm font-medium">
-            Your Photo URL
-          </label>
-          <div className="flex">
-            <input
-              type="text"
-              placeholder="Your Photo URL"
-              {...register("photoURL", { required: true })}
-              className="flex flex-1 py-2 px-4 border sm:text-sm focus:ring-inset dark:border-gray-300 dark:text-gray-800 dark:bg-gray-100 focus:dark:ring-violet-600"
-            />
-          </div>
-        </fieldset>
-        <button
-          type="submit"
-          className="px-8 py-3 mt-4 w-full font-semibold rounded dark:bg-gray-800 dark:text-gray-100"
-        >
-          Registeration
-        </button>
-        <div className="my-4">
-          <SigninWithGoogle />
-        </div>
-        <p className="mt-4">
-          Already have an account? Please
-          <Link className="text-[#00f]" to={"/login"}>
-            {" "}
-            log in{" "}
-          </Link>
-          here.
-        </p>
-      </form> */}
       <div className="w-full mx-auto my-4 max-w-md p-8 space-y-3 rounded-xl bg-gray-800">
         <h1 className="text-2xl font-bold text-center">Register</h1>
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
@@ -137,10 +77,7 @@ const RegisterPage = () => {
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
           </div>
-          <button
-            type="submit"
-            className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600"
-          >
+          <button type="submit" className="btn-primary py-3 rounded-md">
             Register
           </button>
         </form>

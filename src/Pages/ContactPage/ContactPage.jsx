@@ -64,7 +64,7 @@ const ContactPage = () => {
               rows={5}
             ></textarea>
           </div>
-          <button className="px-4 rounded-md py-2 hover:bg-violet-700 bg-violet-600 flex items-center justify-center gap-2 md:col-span-2">
+          <button className="btn-primary py-3 rounded-md flex items-center justify-center gap-2 md:col-span-2">
             <span>Send</span>
             <IoMdSend />
           </button>
