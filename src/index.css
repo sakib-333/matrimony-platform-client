@@ -6,4 +6,7 @@
   .heading {
     @apply font-bold text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl;
   }
+  .paragraph {
+    @apply mx-auto text-center text-gray-400;
+  }
 }

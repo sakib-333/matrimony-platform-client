@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PageTitle from "../../Components/PageTitle/PageTitle";
 import { useQuery } from "@tanstack/react-query";
 import useAxios from "../../Hooks/useAxios";
@@ -41,7 +41,7 @@ const BiodatasPage = () => {
     <div>
       <PageTitle title="Biodatas" />
       <div className="sm:flex gap-4 space-y-4 sm:space-y-0 my-4">
-        <div className="w-full sm:w-3/12 h-[100px] space-y-4">
+        <div className="w-full sm:w-3/12 space-y-4">
           <h1 className="heading text-left">Filter Options</h1>
           <div>
             <select
@@ -110,7 +110,11 @@ const BiodatasPage = () => {
             <LoadingSpinner />
           ) : (
             <>
-              {!data.length && <h1 className="heading">No data found</h1>}
+              {!data.length && (
+                <div className="w-full h-full flex flex-col items-center justify-center">
+                  <h1 className="heading">No data found</h1>
+                </div>
+              )}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {data.map((user) => (
                   <BiodataCard key={user._id} user={user} />
