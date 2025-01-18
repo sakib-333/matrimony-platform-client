@@ -10,6 +10,7 @@ import BiodatasPage from "../Pages/BiodatasPage/BiodatasPage";
 import DashboardPage from "../Pages/DashboardPage/DashboardPage";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import CheckUserExistence from "../Components/CheckUserExistence/CheckUserExistence";
+import BiodataDetails from "../Pages/BiodataDetails/BiodataDetails";
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,14 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <RegisterPage />,
+      },
+      {
+        path: "/biodata/:id",
+        element: (
+          <PrivateRoute>
+            <BiodataDetails />
+          </PrivateRoute>
+        ),
       },
     ],
   },

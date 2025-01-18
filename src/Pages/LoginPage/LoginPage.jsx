@@ -21,7 +21,7 @@ const LoginPage = () => {
     signinUser(email, password)
       .then(() => {
         toast.success("Welcome back");
-        navigate(state?.from?.pathname || "/");
+        navigate(state?.from || "/");
       })
       .catch(() => toast.error("Something went wrong"))
       .finally(() => setLoading(false));
