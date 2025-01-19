@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImage from "../../../Assets/bannerPhoto.png";
+import weddingImage from "../Assets/Wedding.svg";
 import { sliderContent } from "../../../Assets/sliderContent";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -13,11 +13,10 @@ const Banner = () => {
     <div
       style={{
         width: "100%",
-        minHeight: "65vh",
-        backgroundImage: `url(${bannerImage})`,
+        backgroundImage: `url(${weddingImage})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "constian",
-        backgroundColor: "rgba(0, 0, 0, 0.4)",
+        backgroundColor: "rgba(0, 0, 0, 0.6)",
         backgroundBlendMode: "darken",
         backgroundPosition: "center",
         marginTop: "1rem",
