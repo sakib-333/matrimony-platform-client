@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthContext";
-import { toast } from "react-toastify";
 import logo from "../../Assets/logo.svg";
 
 const activeStyle = {
@@ -10,7 +9,7 @@ const activeStyle = {
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
-  const { user, setUser, signoutUser, setLoading } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const navItems = (
     <>
@@ -79,16 +78,6 @@ const Navbar = () => {
     </>
   );
 
-  const handleLogout = () => {
-    signoutUser()
-      .then(() => {
-        setUser(() => null);
-        toast.success("Logout successfull.");
-      })
-      .catch(() => toast.error("Something went wrong."))
-      .finally(() => setLoading(false));
-  };
-
   return (
     <header className="p-4 bg-gray-800">
       <div className="container flex justify-between h-16 mx-auto">
@@ -103,16 +92,11 @@ const Navbar = () => {
         <div className="flex relative">
           <div className="items-center flex-shrink-0 flex">
             {user ? (
-              <>
-                <img
-                  alt="avatar"
-                  className="w-12 h-12 mr-2 border rounded-full dark:bg-gray-500 dark:border-gray-300"
-                  src={user?.photoURL}
-                />
-                <button onClick={handleLogout} className="btn-primary">
-                  Log out
-                </button>
-              </>
+              <img
+                alt="avatar"
+                className="w-12 h-12 mr-2 border rounded-full dark:bg-gray-500 dark:border-gray-300"
+                src={user?.photoURL}
+              />
             ) : (
               <Link to={"/login"} className="btn-primary">
                 Log in
@@ -144,19 +128,6 @@ const Navbar = () => {
             }`}
           >
             {navItems}
-            {user ? (
-              <li className="pl-4">
-                <button className="text-violet-500" onClick={handleLogout}>
-                  Log out
-                </button>
-              </li>
-            ) : (
-              <li className="pl-4">
-                <Link to={"/login"} className="text-violet-500">
-                  Log in
-                </Link>
-              </li>
-            )}
           </ul>
         </div>
       </div>

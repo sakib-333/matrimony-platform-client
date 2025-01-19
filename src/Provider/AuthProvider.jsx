@@ -11,7 +11,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../Firebase/firebase.config";
 import useAxios from "../Hooks/useAxios";
-import axios from "axios";
+import { toast } from "react-toastify";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -50,13 +50,24 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currUser) => {
       setUser(currUser);
       if (currUser) {
-        axiosInstance.post("/jwt", { email: currUser.email }).then((res) => {
-          setLoading(false);
-        });
+        axiosInstance
+          .post("/jwt", { email: currUser.email })
+          .then(() => {
+            setLoading(false);
+            axiosInstance
+              .post("/getUserType", { email: currUser?.email })
+              .then(({ data }) => {
+                setUser((currState) => ({
+                  ...currState,
+                  userType: data.userType,
+                }));
+              });
+          })
+          .catch(() => toast.error("Something went wrong"));
       } else {
         axiosInstance
           .post("/logout", {})
-          .then((res) => {
+          .then(() => {
             setLoading(false);
           })
           .finally(() => {
