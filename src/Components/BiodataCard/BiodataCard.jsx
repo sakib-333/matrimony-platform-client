@@ -11,6 +11,7 @@ const BiodataCard = ({ user }) => {
     bioType,
     permanentDivision,
     occupation,
+    BiodataId,
   } = user;
   return (
     <div className="border relative p-4 w-full ">
@@ -23,7 +24,9 @@ const BiodataCard = ({ user }) => {
             className="max-w-[150px] aspect-square rounded-full"
             src={profileImg}
           />
-          <p className="text-xs mt-2 font-bold max-w-[150px] ">{"ABC999"}</p>
+          <p className="text-xs mt-2 font-bold max-w-[150px] ">
+            {BiodataId.toString().padStart(6, "0")}
+          </p>
         </div>
         <ul className="space-y-1">
           <li>Age: {age}</li>

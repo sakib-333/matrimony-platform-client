@@ -3,9 +3,22 @@ import PageTitle from "../../Components/PageTitle/PageTitle";
 import { AuthContext } from "../../Provider/AuthContext";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useQuery } from "@tanstack/react-query";
+import useAxios from "../../Hooks/useAxios";
 
 const DashboardPage = () => {
-  const { user, setUser, signoutUser,setLoading } = useContext(AuthContext);
+  const { user, setUser, signoutUser, setLoading } = useContext(AuthContext);
+  const axiosInstance = useAxios();
+  const { data: biodata = null } = useQuery({
+    queryKey: ["checkBioExist"],
+    queryFn: async () => {
+      const res = await axiosInstance.post("/myBiodata", {
+        email: user?.email,
+        action: "get",
+      });
+      return res.data;
+    },
+  });
 
   const handleLogout = () => {
     signoutUser()
@@ -33,16 +46,32 @@ const DashboardPage = () => {
               </div>
             </div>
             <div className="flex flex-col space-y-3">
-              <Link to={"#"} rel="noopener noreferrer">
-                Edit Biodata
+              <Link
+                to={"/myBiodata"}
+                className="hover:underline w-fit"
+                rel="noopener noreferrer"
+              >
+                {biodata ? "Edit" : "Add"} Biodata
               </Link>
-              <Link to={"#"} rel="noopener noreferrer">
+              <Link
+                to={"#"}
+                className="hover:underline w-fit"
+                rel="noopener noreferrer"
+              >
                 View Biodata
               </Link>
-              <Link to={"#"} rel="noopener noreferrer">
+              <Link
+                to={"#"}
+                className="hover:underline w-fit"
+                rel="noopener noreferrer"
+              >
                 My Contact Request
               </Link>
-              <Link to={"#"} rel="noopener noreferrer">
+              <Link
+                to={"#"}
+                className="hover:underline w-fit"
+                rel="noopener noreferrer"
+              >
                 Favourites Biodata
               </Link>
               <button className="text-left" onClick={handleLogout}>

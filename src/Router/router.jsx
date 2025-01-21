@@ -12,6 +12,7 @@ import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import CheckUserExistence from "../Components/CheckUserExistence/CheckUserExistence";
 import BiodataDetails from "../Pages/BiodataDetails/BiodataDetails";
 import CheckoutPage from "../Pages/CheckoutPage/CheckoutPage";
+import MyBiodata from "../Pages/MyBiodata/MyBiodata";
 
 export const router = createBrowserRouter([
   {
@@ -68,6 +69,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <CheckoutPage />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/myBiodata",
+        element: (
+          <PrivateRoute>
+            <MyBiodata />
           </PrivateRoute>
         ),
       },
