@@ -13,6 +13,7 @@ import CheckUserExistence from "../Components/CheckUserExistence/CheckUserExiste
 import BiodataDetails from "../Pages/BiodataDetails/BiodataDetails";
 import CheckoutPage from "../Pages/CheckoutPage/CheckoutPage";
 import MyBiodata from "../Pages/MyBiodata/MyBiodata";
+import ViewMyBiodata from "../Pages/ViewMyBiodata/ViewMyBiodata";
 
 export const router = createBrowserRouter([
   {
@@ -38,11 +39,34 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: (
-          <PrivateRoute>
-            <DashboardPage />
-          </PrivateRoute>
-        ),
+        children: [
+          {
+            path: "/dashboard",
+            element: (
+              <PrivateRoute>
+                <DashboardPage />
+              </PrivateRoute>
+            ),
+            children: [
+              {
+                path: "",
+                element: (
+                  <PrivateRoute>
+                    <ViewMyBiodata />
+                  </PrivateRoute>
+                ),
+              },
+              {
+                path: "myBiodata",
+                element: (
+                  <PrivateRoute>
+                    <MyBiodata />
+                  </PrivateRoute>
+                ),
+              },
+            ],
+          },
+        ],
       },
       {
         path: "/login",
@@ -72,14 +96,14 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "/myBiodata",
-        element: (
-          <PrivateRoute>
-            <MyBiodata />
-          </PrivateRoute>
-        ),
-      },
+      // {
+      //   path: "/myBiodata",
+      //   element: (
+      //     <PrivateRoute>
+      //       <MyBiodata />
+      //     </PrivateRoute>
+      //   ),
+      // },
     ],
   },
 ]);

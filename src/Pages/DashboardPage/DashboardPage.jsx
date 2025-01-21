@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import PageTitle from "../../Components/PageTitle/PageTitle";
 import { AuthContext } from "../../Provider/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useQuery } from "@tanstack/react-query";
 import useAxios from "../../Hooks/useAxios";
@@ -31,7 +31,7 @@ const DashboardPage = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col sm:flex-row">
       <PageTitle title="Dashboard" />
       <aside className="w-full p-6 sm:w-60 text-white">
         <nav className="space-y-8 text-sm">
@@ -47,14 +47,14 @@ const DashboardPage = () => {
             </div>
             <div className="flex flex-col space-y-3">
               <Link
-                to={"/myBiodata"}
+                to={"/dashboard/myBiodata"}
                 className="hover:underline w-fit"
                 rel="noopener noreferrer"
               >
                 {biodata ? "Edit" : "Add"} Biodata
               </Link>
               <Link
-                to={"#"}
+                to={"/dashboard"}
                 className="hover:underline w-fit"
                 rel="noopener noreferrer"
               >
@@ -81,6 +81,7 @@ const DashboardPage = () => {
           </div>
         </nav>
       </aside>
+      <Outlet />
     </div>
   );
 };

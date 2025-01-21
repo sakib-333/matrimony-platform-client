@@ -53,7 +53,7 @@ const AuthProvider = ({ children }) => {
         axiosInstance
           .post("/jwt", { email: currUser.email })
           .then(() => {
-            setLoading(false);
+            // setLoading(false);
             axiosInstance
               .post("/getUserType", { email: currUser?.email })
               .then(({ data }) => {
@@ -63,7 +63,8 @@ const AuthProvider = ({ children }) => {
                 }));
               });
           })
-          .catch(() => toast.error("Something went wrong"));
+          .catch(() => toast.error("Something went wrong"))
+          .finally(() => setLoading(false));
       } else {
         axiosInstance
           .post("/logout", {})

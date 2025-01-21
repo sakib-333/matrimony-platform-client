@@ -71,7 +71,7 @@ const MyBiodata = () => {
   };
 
   return (
-    <div>
+    <div className="w-full">
       <PageTitle title={"My Biodata"} />
 
       {isLoading ? (
