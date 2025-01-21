@@ -68,7 +68,7 @@ const DashboardPage = () => {
                 My Contact Request
               </Link>
               <Link
-                to={"#"}
+                to={"/dashboard/myFavouritesBiodatas"}
                 className="hover:underline w-fit"
                 rel="noopener noreferrer"
               >

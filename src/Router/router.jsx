@@ -14,6 +14,7 @@ import BiodataDetails from "../Pages/BiodataDetails/BiodataDetails";
 import CheckoutPage from "../Pages/CheckoutPage/CheckoutPage";
 import MyBiodata from "../Pages/MyBiodata/MyBiodata";
 import ViewMyBiodata from "../Pages/ViewMyBiodata/ViewMyBiodata";
+import MyFavouritesBiodatas from "../Pages/MyFavouritesBiodatas/MyFavouritesBiodatas";
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +62,14 @@ export const router = createBrowserRouter([
                 element: (
                   <PrivateRoute>
                     <MyBiodata />
+                  </PrivateRoute>
+                ),
+              },
+              {
+                path: "myFavouritesBiodatas",
+                element: (
+                  <PrivateRoute>
+                    <MyFavouritesBiodatas />
                   </PrivateRoute>
                 ),
               },
