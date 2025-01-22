@@ -18,6 +18,7 @@ import MyFavouritesBiodatas from "../Pages/MyFavouritesBiodatas/MyFavouritesBiod
 import MyContactRequest from "../Pages/MyContactRequest/MyContactRequest";
 import AdminDashboard from "../Pages/AdminDashboard/AdminDashboard";
 import GeneralDashboard from "../Pages/DashboardPage/GeneralDashboard";
+import AdminHome from "../Pages/AdminDashboard/AdminHome/AdminHome";
 
 export const router = createBrowserRouter([
   {
@@ -81,6 +82,11 @@ export const router = createBrowserRouter([
                 <MyFavouritesBiodatas />
               </PrivateRoute>
             ),
+          },
+          // Admin user
+          {
+            path: "",
+            element: <AdminHome />,
           },
         ],
       },
