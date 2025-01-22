@@ -17,6 +17,7 @@ import ViewMyBiodata from "../Pages/ViewMyBiodata/ViewMyBiodata";
 import MyFavouritesBiodatas from "../Pages/MyFavouritesBiodatas/MyFavouritesBiodatas";
 import MyContactRequest from "../Pages/MyContactRequest/MyContactRequest";
 import AdminDashboard from "../Pages/AdminDashboard/AdminDashboard";
+import GeneralDashboard from "../Pages/DashboardPage/GeneralDashboard";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,41 @@ export const router = createBrowserRouter([
             <DashboardPage />
           </PrivateRoute>
         ),
+        children: [
+          // General users
+          {
+            path: "myBiodata",
+            element: (
+              <PrivateRoute>
+                <MyBiodata />
+              </PrivateRoute>
+            ),
+          },
+          {
+            path: "viewMyBiodata",
+            element: (
+              <PrivateRoute>
+                <ViewMyBiodata />
+              </PrivateRoute>
+            ),
+          },
+          {
+            path: "myContactRequest",
+            element: (
+              <PrivateRoute>
+                <MyContactRequest />
+              </PrivateRoute>
+            ),
+          },
+          {
+            path: "myFavouritesBiodatas",
+            element: (
+              <PrivateRoute>
+                <MyFavouritesBiodatas />
+              </PrivateRoute>
+            ),
+          },
+        ],
       },
       {
         path: "/login",

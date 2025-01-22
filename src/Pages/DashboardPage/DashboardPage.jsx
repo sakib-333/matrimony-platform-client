@@ -10,7 +10,7 @@ const DashboardPage = () => {
   return (
     <div className="flex flex-col sm:flex-row">
       <PageTitle title="Dashboard" />
-      {user?.userType === "general" ? <GeneralDashboard /> : <AdminDashboard />}
+      {user?.userType === "admin" ? <AdminDashboard /> : <GeneralDashboard />}
     </div>
   );
 };

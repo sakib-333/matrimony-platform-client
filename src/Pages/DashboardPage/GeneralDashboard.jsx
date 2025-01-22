@@ -1,12 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import useAxios from "../../Hooks/useAxios";
-import { Link } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import Logout from "./Logout";
 import { AuthContext } from "../../Provider/AuthContext";
 
 const GeneralDashboard = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
   const axiosInstance = useAxios();
   const { data: biodata = null } = useQuery({
     queryKey: ["checkBioExist"],
@@ -18,16 +19,21 @@ const GeneralDashboard = () => {
       return res.data;
     },
   });
+
+  useEffect(() => {
+    navigate("/dashboard/myBiodata");
+  }, []);
+
   return (
-    <div>
-      <aside className="w-full p-6 sm:w-60 text-white">
+    <div className="flex flex-col items-center sm:flex-row sm:items-start w-full">
+      <aside className="max-w-max p-6 sm:w-60 text-white">
         <nav className="space-y-8 text-sm">
           <div className="space-y-2">
-            <div className="flex items-center gap-2">
+            <div className="flex flex-col items-center gap-2">
               <img className="w-12 h-12 rounded-full" src={user?.photoURL} />
               <div>
                 <p className="text-[18px]">{user?.displayName}</p>
-                <p className="text-gray-400 text-xs capitalize">
+                <p className="text-gray-400 text-center text-xs capitalize">
                   {user?.userType}
                 </p>
               </div>
@@ -39,7 +45,10 @@ const GeneralDashboard = () => {
               >
                 {biodata ? "Edit" : "Add"} Biodata
               </Link>
-              <Link to={"/dashboard"} className="hover:underline w-fit">
+              <Link
+                to={"/dashboard/viewMyBiodata"}
+                className="hover:underline w-fit"
+              >
                 View Biodata
               </Link>
               <Link
@@ -59,6 +68,7 @@ const GeneralDashboard = () => {
           </div>
         </nav>
       </aside>
+      <Outlet />
     </div>
   );
 };
