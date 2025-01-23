@@ -24,7 +24,11 @@ const RegisterPage = () => {
         updateUserProfile({ displayName, photoURL })
           .then(() => {
             axiosInstance
-              .post("/saveUserInfo", { email, userType: "general" })
+              .post("/saveUserInfo", {
+                email,
+                userType: "general",
+                name: displayName,
+              })
               .then(() => {
                 toast.success("Registration successfull");
               })

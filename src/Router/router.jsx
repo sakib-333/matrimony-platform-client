@@ -19,6 +19,7 @@ import MyContactRequest from "../Pages/MyContactRequest/MyContactRequest";
 import AdminDashboard from "../Pages/AdminDashboard/AdminDashboard";
 import GeneralDashboard from "../Pages/DashboardPage/GeneralDashboard";
 import AdminHome from "../Pages/AdminDashboard/AdminHome/AdminHome";
+import ManageUsers from "../Pages/AdminDashboard/ManageUsers/ManageUsers";
 
 export const router = createBrowserRouter([
   {
@@ -87,6 +88,10 @@ export const router = createBrowserRouter([
           {
             path: "",
             element: <AdminHome />,
+          },
+          {
+            path: "manage",
+            element: <ManageUsers />,
           },
         ],
       },

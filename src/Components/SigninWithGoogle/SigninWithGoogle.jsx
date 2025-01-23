@@ -16,6 +16,7 @@ const SigninWithGoogle = () => {
         axiosInstance
           .post("/saveUserInfo", {
             email: res?.user?.email,
+            name: res?.user?.displayName,
             userType: "general",
           })
           .then(() => {
