@@ -1,17 +1,23 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../../Provider/AuthContext";
 import { useQuery } from "@tanstack/react-query";
-import useAxios from "../../Hooks/useAxios";
-import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
+import React, { useContext } from "react";
+import useAxios from "../../../Hooks/useAxios";
+import { AuthContext } from "../../../Provider/AuthContext";
+import LoadingSpinner from "../../../Components/LoadingSpinner/LoadingSpinner";
+import useMakePremium from "../hooks/useMakePremium";
 
-const MyFavouritesBiodatas = () => {
+const ApprovedPremium = () => {
   const { user } = useContext(AuthContext);
+  const handleMakePremium = useMakePremium();
   const axiosInstance = useAxios();
-  const { data = [], isLoading } = useQuery({
-    queryKey: ["getMyFavBios"],
+  const {
+    data = [],
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["getPremiumRequestUsers"],
     queryFn: async () => {
-      const res = await axiosInstance.post("/getMyFavBiodatas", {
-        email: user?.email,
+      const res = await axiosInstance.post("/getPremiumRequestUsers", {
+        email: user.email,
       });
       return res.data;
     },
@@ -24,7 +30,7 @@ const MyFavouritesBiodatas = () => {
       ) : data.length ? (
         <div>
           <div className="container p-2 mx-auto sm:p-4">
-            <h2 className="heading">Your Favourite Biodatas</h2>
+            <h2 className="heading">Approve Premium</h2>
             <div className="overflow-x-auto mt-4">
               <table className="min-w-full border w-full text-xs">
                 <colgroup>
@@ -32,38 +38,38 @@ const MyFavouritesBiodatas = () => {
                   <col />
                   <col />
                   <col />
-                  <col />
                 </colgroup>
                 <thead className="paragraph border text-white">
                   <tr className="text-left">
-                    <th className="p-3 border">Biodata Id</th>
                     <th className="p-3 border">Name</th>
-                    <th className="p-3 border">Permanent Address</th>
-                    <th className="p-3 border">Occupation</th>
+                    <th className="p-3 border">Email</th>
+                    <th className="p-3 border">Biodata ID</th>
                     <th className="p-3 border">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {data.map((bio) => (
+                  {data.map((user) => (
                     <tr
-                      key={bio?._id}
+                      key={user?._id}
                       className="border-b border-opacity-20 dark:border-gray-300 "
                     >
                       <td className="p-3 border">
-                        <p>{bio?.BiodataId}</p>
+                        <p>{user?.name}</p>
                       </td>
                       <td className="p-3 border">
-                        <p>{bio?.name}</p>
+                        <p>{user?.contactEmail}</p>
                       </td>
                       <td className="p-3 border">
-                        <p>{bio?.permanentDivision}</p>
+                        <p>{user?.BiodataId}</p>
                       </td>
                       <td className="p-3 border">
-                        <p>{bio?.occupation}</p>
-                      </td>
-                      <td className="p-3 border">
-                        <button className="btn-primary px-2 py-1">
-                          Delete
+                        <button
+                          className="btn-primary"
+                          onClick={() =>
+                            handleMakePremium(user.contactEmail, refetch)
+                          }
+                        >
+                          Make Premium
                         </button>
                       </td>
                     </tr>
@@ -82,4 +88,4 @@ const MyFavouritesBiodatas = () => {
   );
 };
 
-export default MyFavouritesBiodatas;
+export default ApprovedPremium;

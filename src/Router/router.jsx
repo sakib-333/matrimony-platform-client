@@ -20,6 +20,7 @@ import AdminDashboard from "../Pages/AdminDashboard/AdminDashboard";
 import GeneralDashboard from "../Pages/DashboardPage/GeneralDashboard";
 import AdminHome from "../Pages/AdminDashboard/AdminHome/AdminHome";
 import ManageUsers from "../Pages/AdminDashboard/ManageUsers/ManageUsers";
+import ApprovedPremium from "../Pages/AdminDashboard/ApprovedPremium/ApprovedPremium";
 
 export const router = createBrowserRouter([
   {
@@ -92,6 +93,10 @@ export const router = createBrowserRouter([
           {
             path: "manage",
             element: <ManageUsers />,
+          },
+          {
+            path: "approvedPremium",
+            element: <ApprovedPremium />,
           },
         ],
       },

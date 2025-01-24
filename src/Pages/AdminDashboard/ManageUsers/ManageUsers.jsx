@@ -4,9 +4,11 @@ import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "../../../Provider/AuthContext";
 import LoadingSpinner from "../../../Components/LoadingSpinner/LoadingSpinner";
 import Swal from "sweetalert2";
+import useMakePremium from "../hooks/useMakePremium";
 
 const ManageUsers = () => {
   const { user } = useContext(AuthContext);
+  const handleMakePremium = useMakePremium();
   const axiosInstance = useAxios();
   const [searchKey, setSearchKey] = useState("");
   const {
@@ -24,7 +26,7 @@ const ManageUsers = () => {
     },
   });
 
-  console.log(data);
+  // console.log(data);
 
   const handleSearchUser = (e) => {
     setSearchKey(e.target.value);
@@ -104,7 +106,7 @@ const ManageUsers = () => {
                       </td>
                       <td className="p-3 border">
                         <button
-                          onClick={() => handleMakeAdmin(user.email)}
+                          onClick={() => handleMakeAdmin(user.email, refetch)}
                           disabled={user?.userType === "admin"}
                           className="btn-primary"
                         >
@@ -113,6 +115,7 @@ const ManageUsers = () => {
                       </td>
                       <td className="p-3 border">
                         <button
+                          onClick={() => handleMakePremium(user.email, refetch)}
                           disabled={user?.userType === "premium"}
                           className="btn-primary"
                         >

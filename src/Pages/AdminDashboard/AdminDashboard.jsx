@@ -1,10 +1,15 @@
-import React, { useContext } from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Link, Navigate, Outlet, useNavigate } from "react-router-dom";
 import Logout from "../DashboardPage/Logout";
 import { AuthContext } from "../../Provider/AuthContext";
 
 const AdminDashboard = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/dashboard");
+  }, []);
 
   return (
     <div className="flex flex-col items-center sm:flex-row sm:items-start w-full">
@@ -27,7 +32,10 @@ const AdminDashboard = () => {
               <Link to={"/dashboard/manage"} className="hover:underline w-fit">
                 Manage Users
               </Link>
-              <Link to={"#"} className="hover:underline w-fit">
+              <Link
+                to={"/dashboard/approvedPremium"}
+                className="hover:underline w-fit"
+              >
                 Approved Premium
               </Link>
               <Link to={"#"} className="hover:underline w-fit">
