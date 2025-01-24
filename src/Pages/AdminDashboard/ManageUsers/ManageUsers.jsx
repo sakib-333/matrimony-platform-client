@@ -10,7 +10,7 @@ const ManageUsers = () => {
   const axiosInstance = useAxios();
   const [searchKey, setSearchKey] = useState("");
   const {
-    data: users = [],
+    data = {},
     isLoading,
     refetch,
   } = useQuery({
@@ -23,6 +23,8 @@ const ManageUsers = () => {
       return res.data;
     },
   });
+
+  console.log(data);
 
   const handleSearchUser = (e) => {
     setSearchKey(e.target.value);
@@ -77,6 +79,7 @@ const ManageUsers = () => {
                   <col />
                   <col />
                   <col />
+                  <col />
                 </colgroup>
                 <thead className="paragraph border text-white">
                   <tr className="text-left">
@@ -84,10 +87,11 @@ const ManageUsers = () => {
                     <th className="p-3 border">Email</th>
                     <th className="p-3 border">Option</th>
                     <th className="p-3 border">Option</th>
+                    <th className="p-3 border">Info</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {users.map((user) => (
+                  {data.result.map((user) => (
                     <tr
                       key={user?._id}
                       className="border-b border-opacity-20 dark:border-gray-300 "
@@ -116,6 +120,13 @@ const ManageUsers = () => {
                             ? "Premium"
                             : "Make Premium"}
                         </button>
+                      </td>
+                      <td className="p-3 border">
+                        <p>
+                          {data.requestedUsers.premiumReq.includes(user.email)
+                            ? "Requested"
+                            : "-"}
+                        </p>
                       </td>
                     </tr>
                   ))}
