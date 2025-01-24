@@ -52,6 +52,12 @@ const GeneralDashboard = () => {
                 View Biodata
               </Link>
               <Link
+                to={"/dashboard/gotMarried"}
+                className="hover:underline w-fit"
+              >
+                Got Married
+              </Link>
+              <Link
                 to={"/dashboard/myContactRequest"}
                 className="hover:underline w-fit"
               >

@@ -21,6 +21,7 @@ import GeneralDashboard from "../Pages/DashboardPage/GeneralDashboard";
 import AdminHome from "../Pages/AdminDashboard/AdminHome/AdminHome";
 import ManageUsers from "../Pages/AdminDashboard/ManageUsers/ManageUsers";
 import ApprovedPremium from "../Pages/AdminDashboard/ApprovedPremium/ApprovedPremium";
+import GotMarried from "../Pages/GotMarried/GotMarried";
 
 export const router = createBrowserRouter([
   {
@@ -66,6 +67,14 @@ export const router = createBrowserRouter([
             element: (
               <PrivateRoute>
                 <ViewMyBiodata />
+              </PrivateRoute>
+            ),
+          },
+          {
+            path: "gotMarried",
+            element: (
+              <PrivateRoute>
+                <GotMarried />
               </PrivateRoute>
             ),
           },
