@@ -41,6 +41,9 @@ const AdminDashboard = () => {
               <Link to={"#"} className="hover:underline w-fit">
                 Approved Contact Request
               </Link>
+              <Link to={"/dashboard/successStory"} className="hover:underline w-fit">
+                Success Story
+              </Link>
               <Logout />
             </div>
           </div>

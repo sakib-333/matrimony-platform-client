@@ -22,6 +22,7 @@ import AdminHome from "../Pages/AdminDashboard/AdminHome/AdminHome";
 import ManageUsers from "../Pages/AdminDashboard/ManageUsers/ManageUsers";
 import ApprovedPremium from "../Pages/AdminDashboard/ApprovedPremium/ApprovedPremium";
 import GotMarried from "../Pages/GotMarried/GotMarried";
+import SuccessStory from "../Pages/AdminDashboard/SuccessStory/SuccessStory";
 
 export const router = createBrowserRouter([
   {
@@ -106,6 +107,10 @@ export const router = createBrowserRouter([
           {
             path: "approvedPremium",
             element: <ApprovedPremium />,
+          },
+          {
+            path: "successStory",
+            element: <SuccessStory />,
           },
         ],
       },
