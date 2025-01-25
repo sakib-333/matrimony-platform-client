@@ -6,6 +6,7 @@ import { AuthContext } from "../../Provider/AuthContext";
 import LoadingSpinner from "../../Components/LoadingSpinner/LoadingSpinner";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { toast } from "react-toastify";
 
 const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 const divisions = [
@@ -65,8 +66,8 @@ const MyBiodata = () => {
           });
         }
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        toast.error("Something went wrong");
       });
   };
 

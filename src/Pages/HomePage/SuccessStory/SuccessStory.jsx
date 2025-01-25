@@ -14,7 +14,7 @@ const SuccessStory = () => {
     },
   });
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className=" text-white py-8">
