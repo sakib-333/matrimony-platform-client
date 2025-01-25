@@ -11,7 +11,7 @@ const SuccessStory = () => {
   const { data = [], isLoading } = useQuery({
     queryKey: ["getSuccessStory"],
     queryFn: async () => {
-      const res = await axiosInstance.post("/getSuccessStory", {
+      const res = await axiosInstance.get("/getSuccessStoryAdmin", {
         email: user.email,
       });
       return res.data;
@@ -53,10 +53,10 @@ const SuccessStory = () => {
                       className="border-b border-opacity-20 dark:border-gray-300 "
                     >
                       <td className="p-3 border">
-                        <p>{story?.selfBiodataID}</p>
+                        <p>{story?.maleBiodataID}</p>
                       </td>
                       <td className="p-3 border">
-                        <p>{story?.partnerBiodataID}</p>
+                        <p>{story?.femaleBiodataID}</p>
                       </td>
                       <td className="p-3 border">
                         <button

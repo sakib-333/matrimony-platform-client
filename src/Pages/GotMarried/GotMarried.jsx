@@ -15,10 +15,12 @@ const GotMarried = () => {
       .post("/addSuccessStory", {
         email: user.email,
         successStory: {
-          selfBiodataID: data.selfBiodataID,
-          partnerBiodataID: data.partnerBiodataID,
+          maleBiodataID: data.maleBiodataID,
+          femaleBiodataID: data.femaleBiodataID,
           coupleImageLink: data.coupleImageLink,
+          marriageDate: data.marriageDate,
           successStoryReview: data.successStoryReview,
+          rating: data.rating,
         },
       })
       .then(({ data }) => {
@@ -41,27 +43,27 @@ const GotMarried = () => {
         className="space-y-4 max-w-3xl mx-auto"
       >
         <div className="space-y-1 text-sm w-full">
-          <label htmlFor="age" className="block">
-            Self Biodata ID
+          <label htmlFor="maleBiodataID" className="block">
+            Male Biodata ID
           </label>
           <input
-            placeholder="Self Biodata ID"
+            placeholder="Male Biodata ID"
             type="text"
-            {...register("selfBiodataID", { required: true })}
+            {...register("maleBiodataID", { required: true })}
             className="w-full px-4 py-3 rounded-md bg-black border text-gray-400"
-            id="selfBiodataID"
+            id="maleBiodataID"
           />
         </div>
         <div className="space-y-1 text-sm w-full">
-          <label htmlFor="age" className="block">
-            Partner Biodata ID
+          <label htmlFor="femaleBiodataID" className="block">
+            Female Biodata ID
           </label>
           <input
             placeholder="Partner Biodata ID"
             type="text"
-            {...register("partnerBiodataID", { required: true })}
+            {...register("femaleBiodataID", { required: true })}
             className="w-full px-4 py-3 rounded-md bg-black border text-gray-400"
-            id="partnerBiodataID"
+            id="femaleBiodataID"
           />
         </div>
         <div className="space-y-1 text-sm w-full">
@@ -74,6 +76,29 @@ const GotMarried = () => {
             {...register("coupleImageLink", { required: true })}
             className="w-full px-4 py-3 rounded-md bg-black border text-gray-400"
             id="coupleImageLink"
+          />
+        </div>
+        <div className="space-y-1 text-sm w-full">
+          <label htmlFor="marriageDate" className="block">
+            Marriage Date
+          </label>
+          <input
+            type="date"
+            {...register("marriageDate", { required: true })}
+            className="w-full px-4 py-3 rounded-md bg-black border text-gray-400"
+            id="marriageDate"
+          />
+        </div>
+        <div className="space-y-1 text-sm w-full">
+          <label htmlFor="rating" className="block">
+            Rating
+          </label>
+          <input
+            type="text"
+            placeholder="Give us rating up to 10"
+            {...register("rating", { required: true })}
+            className="w-full px-4 py-3 rounded-md bg-black border text-gray-400"
+            id="rating"
           />
         </div>
         <div className="space-y-1 text-sm w-full">
