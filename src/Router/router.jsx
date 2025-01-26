@@ -11,7 +11,6 @@ import DashboardPage from "../Pages/DashboardPage/DashboardPage";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import CheckUserExistence from "../Components/CheckUserExistence/CheckUserExistence";
 import BiodataDetails from "../Pages/BiodataDetails/BiodataDetails";
-import CheckoutPage from "../Pages/CheckoutPage/CheckoutPage";
 import MyBiodata from "../Pages/MyBiodata/MyBiodata";
 import ViewMyBiodata from "../Pages/ViewMyBiodata/ViewMyBiodata";
 import MyFavouritesBiodatas from "../Pages/MyFavouritesBiodatas/MyFavouritesBiodatas";
@@ -23,6 +22,7 @@ import ManageUsers from "../Pages/AdminDashboard/ManageUsers/ManageUsers";
 import ApprovedPremium from "../Pages/AdminDashboard/ApprovedPremium/ApprovedPremium";
 import GotMarried from "../Pages/GotMarried/GotMarried";
 import SuccessStory from "../Pages/AdminDashboard/SuccessStory/SuccessStory";
+import PaymentPage from "../Pages/CheckoutPage/PaymentPage";
 
 export const router = createBrowserRouter([
   {
@@ -138,7 +138,7 @@ export const router = createBrowserRouter([
         path: "/checkout/:id",
         element: (
           <PrivateRoute>
-            <CheckoutPage />
+            <PaymentPage />
           </PrivateRoute>
         ),
       },
