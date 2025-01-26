@@ -38,10 +38,16 @@ const AdminDashboard = () => {
               >
                 Approved Premium
               </Link>
-              <Link to={"#"} className="hover:underline w-fit">
+              <Link
+                to={"/dashboard/approvedContactRequest"}
+                className="hover:underline w-fit"
+              >
                 Approved Contact Request
               </Link>
-              <Link to={"/dashboard/successStory"} className="hover:underline w-fit">
+              <Link
+                to={"/dashboard/successStory"}
+                className="hover:underline w-fit"
+              >
                 Success Story
               </Link>
               <Logout />

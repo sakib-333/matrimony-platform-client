@@ -23,6 +23,7 @@ import ApprovedPremium from "../Pages/AdminDashboard/ApprovedPremium/ApprovedPre
 import GotMarried from "../Pages/GotMarried/GotMarried";
 import SuccessStory from "../Pages/AdminDashboard/SuccessStory/SuccessStory";
 import PaymentPage from "../Pages/CheckoutPage/PaymentPage";
+import ApprovedContactRequest from "../Pages/AdminDashboard/ApprovedContactRequest/ApprovedContactRequest";
 
 export const router = createBrowserRouter([
   {
@@ -111,6 +112,10 @@ export const router = createBrowserRouter([
           {
             path: "successStory",
             element: <SuccessStory />,
+          },
+          {
+            path: "approvedContactRequest",
+            element: <ApprovedContactRequest />,
           },
         ],
       },
