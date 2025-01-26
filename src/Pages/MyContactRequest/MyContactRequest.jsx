@@ -23,8 +23,6 @@ const MyContactRequest = () => {
     },
   });
 
-  // console.log(data);
-
   const handleDeleteMyReqContact = (email, id) => {
     // console.log(email, id);
     Swal.fire({
@@ -54,11 +52,18 @@ const MyContactRequest = () => {
     });
   };
 
-  return (
-    <div className="w-full">
-      {isLoading ? (
+  // console.log(isLoading);
+  if (isLoading) {
+    return (
+      <div className="w-full h-full">
         <LoadingSpinner />
-      ) : data.length ? (
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full h-full">
+      {data.length ? (
         <div className="w-full">
           <div>
             <div className="container p-2 mx-auto sm:p-4">
@@ -86,11 +91,15 @@ const MyContactRequest = () => {
                   <tbody>
                     {data.map((item) => (
                       <tr
-                        key={item?.requestedID}
+                        key={Math.random()}
                         className="border-b border-opacity-20 dark:border-gray-300 "
                       >
                         <td className="p-3 border">
-                          <p>{item?.BiodataId ? item?.BiodataId : "-"}</p>
+                          <p>
+                            {typeof item?.BiodataId === "undefined"
+                              ? "-"
+                              : item?.BiodataId}
+                          </p>
                         </td>
                         <td className="p-3 border">
                           <p>{item?.name ? item?.name : "-"}</p>
@@ -102,7 +111,7 @@ const MyContactRequest = () => {
                           <p>{item?.contactEmail ? item?.contactEmail : "-"}</p>
                         </td>
                         <td className="p-3 border">
-                          <p>{item?.approve ? "Approved" : "Pending"}</p>
+                          <p>{item?.approved ? "Approved" : "Pending"}</p>
                         </td>
                         <td className="p-3 border">
                           <button
