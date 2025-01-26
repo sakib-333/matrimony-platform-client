@@ -44,7 +44,7 @@ const ApprovedContactRequest = () => {
       });
   };
 
-  console.log(data);
+//   console.log(data);
 
   return (
     <div className="w-full h-full">
