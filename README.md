@@ -12,7 +12,7 @@ A **Matrimony Platform** is an online platform designed to help individuals find
 
 3. **Convenience and Accessibility:** Matrimony websites make it easier for people to connect with potential partners from the comfort of their homes. Users can browse profiles, initiate conversations, and evaluate matches at their own pace, saving time compared to traditional matchmaking methods.
 
-## React fundamental concepts used
+## Technologies used
 
 1. React
 
