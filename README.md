@@ -1,6 +1,6 @@
 # Matrimony Platform
 
-## Description
+## Overview
 
 A **Matrimony Platform** is an online platform designed to help individuals find suitable marriage partners. These websites typically offer matchmaking services, where users create profiles, share personal information, and connect with others who are seeking a life partner. Matrimony websites are especially popular in cultures where arranged marriages are common, although they are widely used across the globe.
 
