@@ -22,7 +22,7 @@ A **Matrimony Platform** is an online platform designed to help individuals find
 
 4. Node
 
-## Key features
+## Core features
 
 1. Authentication using firebase.
 
@@ -48,6 +48,14 @@ A **Matrimony Platform** is an online platform designed to help individuals find
 
 11. Approve contact request(Admin only)
 
+## Dependencies
+
+1. Stripe
+2. TanStack
+3. Axios
+4. Firebase
+5. Sweet Alert
+
 ## Users
 
 ### Please do not modify any users.
@@ -62,3 +70,41 @@ A **Matrimony Platform** is an online platform designed to help individuals find
 ## Live links
 
 1. Live link: [visit](https://ph-b10-a12.web.app/)
+
+## How to in local machine
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone git@github.com:sakib-333/matrimony-platform-client.git
+
+   cd matrimony-platform-client
+   ```
+
+2. Install dependencies
+
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env.local` file root of the folder and all of your secret keys.
+
+   ```bash
+   VITE_apiKey=<your-firebase-api-key>
+   VITE_authDomain=<your-firebase-authDomain>
+   projectId=<your-firebase-projectId>
+   storageBucket=<your-firebase-storageBucket>
+   messagingSenderId=<your-firebase-messagingSenderId>
+   appId=<your-firebase-appId>
+   VITE_URL=<your-server-base-url>
+
+
+   ```
+
+4. Start server
+
+   ```bash
+   npm run dev
+   ```
+
+5. Your server should now be running on `http://localhost:5137`.
