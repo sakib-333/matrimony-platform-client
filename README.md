@@ -71,6 +71,10 @@ A **Matrimony Platform** is an online platform designed to help individuals find
 
 1. Live link: [visit](https://ph-b10-a12.web.app/)
 
+## Server Repo
+
+1. Repo: [visit](https://github.com/sakib-333/matrimony-platform-server)
+
 ## How to in local machine
 
 1. Clone the repository to your local machine:
@@ -107,4 +111,4 @@ A **Matrimony Platform** is an online platform designed to help individuals find
    npm run dev
    ```
 
-5. Your server should now be running on `http://localhost:5137`.
+5. Your server should now be running on `http://localhost:5173`.
