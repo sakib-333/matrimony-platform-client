@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../Assets/logo.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -19,73 +20,54 @@ const Footer = () => {
             </span>
           </a>
         </div>
-        <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 w-full text-sm justify-items-center">
+          <div>
+            <h3 className="tracking-wide uppercase">Contact</h3>
+            <ul>
+              <li>+8801322901105</li>
+              <li>web@programming-hero.com</li>
+              <li>Level-4, 34, Awal Centre, Banani, Dhaka</li>
+            </ul>
+          </div>
           <div className="space-y-3">
             <h3 className="tracking-wide uppercase">Product</h3>
             <ul className="space-y-1">
               <li>
-                <a rel="noopener noreferrer" href="#">
-                  Features
-                </a>
+                <Link
+                  to={"/biodatas"}
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Biodatas
+                </Link>
               </li>
               <li>
-                <a rel="noopener noreferrer" href="#">
-                  Integrations
-                </a>
+                <Link
+                  to={"/about"}
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  About
+                </Link>
               </li>
               <li>
-                <a rel="noopener noreferrer" href="#">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  FAQ
-                </a>
+                <Link
+                  to={"/contact"}
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
-          <div className="space-y-3">
-            <h3 className="tracking-wide uppercase">Company</h3>
-            <ul className="space-y-1">
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  Privacy
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  Terms of Service
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-3">
-            <h3 className="uppercase">Developers</h3>
-            <ul className="space-y-1">
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  Public API
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  Guides
-                </a>
-              </li>
-            </ul>
-          </div>
+
           <div className="space-y-3">
             <div className="uppercase">Social media</div>
             <div className="flex justify-start space-x-3">
               <a
                 rel="noopener noreferrer"
-                href="#"
+                href="https://www.facebook.com/sakib071"
                 title="Facebook"
                 className="flex items-center p-1"
               >
@@ -100,7 +82,7 @@ const Footer = () => {
               </a>
               <a
                 rel="noopener noreferrer"
-                href="#"
+                href="https://x.com/sakib_333x"
                 title="Twitter"
                 className="flex items-center p-1"
               >
@@ -114,7 +96,7 @@ const Footer = () => {
               </a>
               <a
                 rel="noopener noreferrer"
-                href="#"
+                href="https://www.instagram.com/matrimonial.com.bd/"
                 title="Instagram"
                 className="flex items-center p-1"
               >
