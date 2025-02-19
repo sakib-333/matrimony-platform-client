@@ -19,7 +19,6 @@ const Banner = () => {
         backgroundColor: "rgba(0, 0, 0, 0.6)",
         backgroundBlendMode: "darken",
         backgroundPosition: "center",
-        marginTop: "1rem",
       }}
     >
       <Swiper

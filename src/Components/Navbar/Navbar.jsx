@@ -79,13 +79,13 @@ const Navbar = () => {
   );
 
   return (
-    <header className="p-4 bg-gray-800">
+    <header className="p-4 bg-gray-800 fixed w-full z-20 top-0">
       <div className="container flex justify-between h-16 mx-auto">
         <div className="flex">
           <div className="flex items-center">
             <img className="w-16 h-16" src={logo} />
 
-            <h1 className="text-xl font-bold">Matrimony</h1>
+            <h1 className="text-xl font-bold hidden md:block">Matrimony</h1>
           </div>
           <ul className="items-stretch hidden space-x-3 lg:flex">{navItems}</ul>
         </div>

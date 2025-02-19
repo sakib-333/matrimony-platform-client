@@ -10,7 +10,7 @@ const HomeLayout = () => {
   return (
     <div className="max-w-screen-2xl mx-auto bg-black text-white">
       <Navbar />
-      <div className="min-h-screen px-2">
+      <div className="min-h-screen px-2 mt-[95px]">
         {loading ? <LoadingSpinner /> : <Outlet />}
       </div>
       <Footer />
