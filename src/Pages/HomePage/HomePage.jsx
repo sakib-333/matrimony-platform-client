@@ -5,6 +5,7 @@ import HowItWorks from "./HowItWorks/HowItWorks";
 import Banner from "./Banner/Banner";
 import SuccessCounter from "./SuccessCounter/SuccessCounter";
 import SuccessStory from "./SuccessStory/SuccessStory";
+import Review from "../../Components/Review/Review";
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
       <PremiumMembers />
       <HowItWorks />
       <SuccessCounter />
+      <Review />
       <SuccessStory />
     </div>
   );
