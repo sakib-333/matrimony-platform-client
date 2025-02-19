@@ -9,7 +9,7 @@ const ContactPage = () => {
   return (
     <div>
       <PageTitle title={"Contact"} />
-      <div className="my-4">
+      <div className="my-4 pt-4">
         <h1 className="heading">Contact</h1>
         <p className="max-w-xl paragraph">
           Please feel free to post your questions, comments and suggestions. We

@@ -40,7 +40,7 @@ const BiodatasPage = () => {
   return (
     <div>
       <PageTitle title="Biodatas" />
-      <div className="sm:flex gap-4 space-y-4 sm:space-y-0 my-4">
+      <div className="sm:flex gap-4 space-y-4 sm:space-y-0 my-4 pt-4">
         <div className="w-full sm:w-3/12 space-y-4">
           <h1 className="heading text-left">Filter Options</h1>
           <div>

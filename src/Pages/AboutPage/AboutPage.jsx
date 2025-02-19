@@ -8,7 +8,7 @@ const AboutPage = () => {
   return (
     <div className="my-8 md:my-12 lg:my-16">
       <PageTitle title={"About"} />
-      <section className="w-9/12 mx-auto">
+      <section className="w-9/12 mx-auto pt-4">
         <h1 className="heading">We help you find the best life partner.</h1>
         <p className="paragraph">
           There is no doubt, matchmaking is the most challenging part of life.
