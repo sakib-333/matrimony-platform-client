@@ -6,6 +6,7 @@ import Banner from "./Banner/Banner";
 import SuccessCounter from "./SuccessCounter/SuccessCounter";
 import SuccessStory from "./SuccessStory/SuccessStory";
 import Review from "../../Components/Review/Review";
+import Newsletter from "../../Components/Newsletter/Newsletter";
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
       <SuccessCounter />
       <Review />
       <SuccessStory />
+      <Newsletter />
     </div>
   );
 };

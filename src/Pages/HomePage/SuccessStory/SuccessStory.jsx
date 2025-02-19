@@ -17,7 +17,7 @@ const SuccessStory = () => {
   // console.log(data);
 
   return (
-    <div className=" text-white py-8">
+    <div className=" bg-gray-800 text-white py-8">
       <h1 className="heading">Success Story</h1>
       <div className="my-4">
         {isLoading ? (
