@@ -7,6 +7,7 @@ import SuccessCounter from "./SuccessCounter/SuccessCounter";
 import SuccessStory from "./SuccessStory/SuccessStory";
 import Review from "../../Components/Review/Review";
 import Newsletter from "../../Components/Newsletter/Newsletter";
+import WhyChooseUs from "../../Components/WhyChooseUs/WhyChooseUs";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <Banner />
       <PremiumMembers />
       <HowItWorks />
+      <WhyChooseUs />
       <SuccessCounter />
       <Review />
       <SuccessStory />

@@ -26,7 +26,7 @@ const reviews = [
 
 const Review = () => {
   return (
-    <div className=" text-white py-8">
+    <div className=" text-white bg-gray-800 py-8 px-4">
       <h1 className="heading">Review</h1>
       <div className="my-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {reviews.map((review, index) => (
