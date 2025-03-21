@@ -79,7 +79,7 @@ const Navbar = () => {
   );
 
   return (
-    <header className="p-4 bg-gray-800 fixed w-full z-20 top-0">
+    <header className="p-4 bg-gray-800 fixed w-full left-0 z-20 top-0">
       <div className="container flex justify-between h-16 mx-auto">
         <div className="flex">
           <div className="flex items-center">
