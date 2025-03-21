@@ -96,11 +96,11 @@ A **Matrimony Platform** is an online platform designed to help individuals find
    ```bash
    VITE_apiKey=<your-firebase-api-key>
    VITE_authDomain=<your-firebase-authDomain>
-   projectId=<your-firebase-projectId>
-   storageBucket=<your-firebase-storageBucket>
-   messagingSenderId=<your-firebase-messagingSenderId>
-   appId=<your-firebase-appId>
-   VITE_URL=<your-server-base-url>
+   VITE_projectId=<your-firebase-projectId>
+   VITE_storageBucket=<your-firebase-storageBucket>
+   VITE_messagingSenderId=<your-firebase-messagingSenderId>
+   VITE_appId=<your-firebase-appId>
+   VITE_BASE_URL=<your-server-base-url>
 
 
    ```
